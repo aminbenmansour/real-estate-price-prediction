@@ -14,3 +14,9 @@ def load_saved_artifacts():
     with open('./artifacts/bangalore_real_estate_price_prediction_model.pickle', 'rb') as f:
         __model = pickle.load(f)
     print('Loading saved artifacts ... done')
+
+def get_location_names():
+    return __locations
+
+def get_data_columns():
+    return __data_columns
