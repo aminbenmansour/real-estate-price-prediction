@@ -14,6 +14,20 @@ class House(BaseModel):
 async def startup_event():
     utils.load_saved_artifacts()
 
+@app.post('/predict-home-price/')
+def predict_home_price(data: House):
+    total_sqft = data.sqft
+    location = data.location
+    bhk = data.rooms
+    bath = data.baths
+
+    response = {
+        'estimated_price': utils.get_estimated_price(location,total_sqft,bhk,bath)
+    }
+    
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
+
 
 @app.get("/get-location-names")
 def get_location_names():
