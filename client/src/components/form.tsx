@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import locations from '../data/locations.json';
-import { api } from "../App";
+// import { api } from "../App";
 
 
 let locs = locations["locs"];
@@ -45,4 +45,4 @@ function Form() {
     );
 }
 
-export default Form 
+export default Form;
