@@ -2,6 +2,11 @@ import { useState } from 'react'
 import Form from './components/form'
 import './App.css'
 
+import axios from 'axios'
+
+export const api = axios.create({
+  baseURL: 'http://localhost:8000/',
+})
 function App() {
   const [count, setCount] = useState(0)
 

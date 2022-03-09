@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import locations from '../data/locations.json';
-// import { api } from "../App";
+import { api } from "../App";
 
 
 let locs = locations["locs"];
@@ -12,7 +12,7 @@ function Form() {
 
     let prediction = <h2>{price}</h2>;
 
-    const submitForm = async (data) => {
+    const submitForm = async (data: any) => {
 
         await api.post('predict-home-price', data)
                             .then(function(response) {
